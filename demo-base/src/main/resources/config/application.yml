@@ -1,0 +1,30 @@
+server:
+  port: 8805
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/demo?serverTimezone=UTC
+    username: root
+    password: root
+
+mybatis:
+  mapper-locations: classpath:Mapper/*.xml
+  type-aliases-package: com.spf.model
+  ##开启mybatis驼峰命名规则
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  file:
+    path: ./logs
+
+redis:
+  host: 127.0.0.1
+  port: 6379
+  pool:
+    max-active: 100
+    max-idle: 10
+    max-wait: 100000
+  timeout: 0
